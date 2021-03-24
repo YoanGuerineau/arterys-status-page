@@ -1,3 +1,17 @@
+/* header content styles */
+.navbar {
+    display: flex;
+    background: #ffffff;
+}
+
+/* main content styles*/
 .container {
     display: flex;
+    background: #fefee2;
+}
+
+/* footer content styles*/
+.footer {
+    display: flex;
+    background: #ededed;
 }
