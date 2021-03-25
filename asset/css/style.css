@@ -6,8 +6,7 @@
 /* header content styles */
 .navbar {
     box-sizing: border-box;
-    padding: 0 2% 0 2%;
-    width: 100%;
+    padding: 0 10px 0 10px;
     display: flex;
     background: #ffffff;
     color: #191f45;
@@ -45,6 +44,7 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-items: stretch;
     background: #191f45;
     color: #ffffff;
 }
@@ -52,6 +52,7 @@ main {
 .prod-status-container {
     display: flex;
     flex-direction: column;
+    align-items: stretch;
     width: 80%;
     background: #ffffff;
     border-radius: 10px;
@@ -59,7 +60,10 @@ main {
 
 #prod-status-click {
     padding-left: 5px;
+    padding-right: 5px;
     display: flex;
+    flex-direction: row;
+    justify-content: space-between;
     align-items: center;
     border-radius: 10px;
     height: 2em;
@@ -67,6 +71,13 @@ main {
     background: #fafafa;
     color: #191f45;
     cursor: pointer;
+    user-select: none;
+}
+
+#prod-status-click > img {
+    height: 1em;
+    width: auto;
+    transition: transform .2s ease-out;
 }
 
 #prod-status-click:hover {

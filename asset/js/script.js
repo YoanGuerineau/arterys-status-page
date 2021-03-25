@@ -38,9 +38,12 @@ regions.forEach(region => {
 var prod_status_click = document.getElementById('prod-status-click');
 prod_status_click.addEventListener('click', function(){
     var prod_status_content = document.getElementById('prod-status-content');
+    var arrow_img = prod_status_click.getElementsByTagName('img')[0];
     if(prod_status_content.style.maxHeight){
         prod_status_content.style.maxHeight = null;
+        arrow_img.style.transform="rotate(90deg)";
     }else{
         prod_status_content.style.maxHeight = prod_status_content.scrollHeight+"px";
+        arrow_img.style.transform="";
     }
 });
