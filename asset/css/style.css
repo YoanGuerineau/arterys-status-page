@@ -58,6 +58,7 @@ main {
 }
 
 #prod-status-click {
+    padding-left: 5px;
     display: flex;
     align-items: center;
     border-radius: 10px;
@@ -73,6 +74,8 @@ main {
 }
 
 #prod-status-content {
+    display: flex;
+    flex-direction: column;
     border-radius: 10px;
     padding-left: 3px;
     overflow: hidden;
@@ -80,6 +83,19 @@ main {
     color: #191f45;
     max-height: 0;
     transition: max-height 0.2s ease-out;
+}
+
+.region-status-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: 1.2em;
+    padding: 2px 5px 2px 5px;
+}
+
+.region-status-content > img{
+    height: 1em;
+    width: auto;
 }
 
 /* footer content styles*/
