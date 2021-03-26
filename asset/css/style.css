@@ -13,7 +13,6 @@ html,body {
 
 /* header content styles */
 .navbar {
-    box-sizing: border-box;
     padding: 0 10px 0 10px;
     display: flex;
     background: #ffffff;
@@ -28,20 +27,13 @@ html,body {
 }
 
 .navbar-item {
-    display: inline-block;
     padding: 10px 10px;
     cursor: pointer;
-}
-
-.navbar-item {
     text-decoration: none;
 }
 
 .navbar-item:hover {
     background-color: #191f45;
-}
-
-.navbar-item:hover {
     color: #ffffff;
 }
 
@@ -50,55 +42,55 @@ html,body {
 main {
     padding: 16px 0 16px 0;
     display: flex;
-    flex: 1;
     flex-direction: column;
+    flex: 1;
     align-items: center;
-    justify-items: stretch;
     background: #191f45;
     color: #ffffff;
 }
 
+/** styles for the top-row part : production status and ?? **/
 .top-row {
     display: flex;
     flex-direction: row;
     width: 100%;
     justify-content: space-around;
     align-items: flex-start;
+    padding-bottom: 16px;
 }
 
-.prod-status-container {
+.collapsible-container {
     display: flex;
     flex-direction: column;
-    align-items: stretch;
     width: 45%;
     background: #ffffff;
+    overflow: hidden;
     color: #191f45;
     border-radius: 10px;
 }
 
 @media screen and (max-width: 800px){
-    .prod-status-container {
-        width: 75%;
-        margin-top: 8px;
-        margin-bottom: 8px;
+    .collapsible-container {
+        width: 90%;
+        margin-bottom: 16px;
     }
     .top-row {
         flex-direction: column;
         align-items: center;
+        padding-bottom: 0;
     }
 }
 
 .collapsible-click {
-    padding-left: 5px;
-    padding-right: 5px;
+    padding: 0 5px 0 5px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
     border-radius: 10px;
-    height: 2em;
+    height: 1.75em;
     font-size: 1.4em;
-    background: #fafafa;
+    background: #ffffff;
     color: #191f45;
     cursor: pointer;
     user-select: none;
@@ -111,16 +103,16 @@ main {
 }
 
 .collapsible-click:hover {
-    background: #f2f2f2;
+    background: #f5f5f5;
 }
 
 .collapsible-content {
     display: flex;
     flex-direction: column;
-    border-radius: 10px;
-    padding-left: 3px;
+    border-radius: 8px;
+    padding-left: 4px;
     overflow: hidden;
-    background: #ededed;
+    background: #eaeaea;
     color: #191f45;
     max-height: 0;
     transition: max-height 0.2s ease-out;
@@ -131,7 +123,7 @@ main {
     flex-direction: row;
     justify-content: space-between;
     font-size: 1.2em;
-    padding: 2px 5px 2px 5px;
+    padding: 2px 4px 2px 4px;
 }
 
 .region-status-content > img{
@@ -142,5 +134,5 @@ main {
 /* footer content styles*/
 .footer {
     display: flex;
-    background: #ededed;
+    background: #eaeaea;
 }

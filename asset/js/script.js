@@ -27,31 +27,9 @@ function fetch_healthcheck(region){
     });
 }
 
-regions=['us-east-1','eu-central-1','test'];
-
-regions.forEach(region => {
-    fetch_healthcheck(region);
-});
-
-
-/*
-var prod_status_click = document.getElementById('prod-status-click');
-prod_status_click.addEventListener('click', function(){
-    var prod_status_content = document.getElementById('prod-status-content');
-    var arrow_img = prod_status_click.getElementsByTagName('img')[0];
-    if(prod_status_content.style.maxHeight){
-        prod_status_content.style.maxHeight = null;
-        arrow_img.style.transform="rotate(90deg)";
-    }else{
-        prod_status_content.style.maxHeight = prod_status_content.scrollHeight+"px";
-        arrow_img.style.transform="";
-    }
-});*/
-
 function makeCollapsible(div){
     var collapsible_click = null;
     var collapsible_content = null;
-    console.log(div);
     div.childNodes.forEach(child => {
         if(child.className === "collapsible-click"){
             collapsible_click = child;
@@ -59,8 +37,6 @@ function makeCollapsible(div){
             collapsible_content = child;
         }
     })
-    console.log(collapsible_click);
-    console.log(collapsible_content);
     if(collapsible_click !== null && collapsible_content != null){
         var arrow_img = collapsible_click.getElementsByTagName('img')[0];
         collapsible_click.addEventListener('click', function(){
@@ -75,6 +51,12 @@ function makeCollapsible(div){
         collapsible_content.style.maxHeight = collapsible_content.scrollHeight+"px";
     }
 }
+
+regions=['us-east-1','eu-central-1','test'];
+
+regions.forEach(region => {
+    fetch_healthcheck(region);
+});
 
 var collapsible_elements = document.getElementsByClassName("collapsible-container");
 
