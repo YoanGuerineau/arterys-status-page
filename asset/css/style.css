@@ -1,6 +1,14 @@
+/* Setting up some useful content */
 * {
     padding: 0;
     margin: 0;
+}
+
+html,body {
+    height: 100%;
+    min-width: 300px;
+    display: flex;
+    flex-direction: column;
 }
 
 /* header content styles */
@@ -40,8 +48,9 @@
 /* main content styles*/
 
 main {
-    padding: 16px;
+    padding: 16px 0 16px 0;
     display: flex;
+    flex: 1;
     flex-direction: column;
     align-items: center;
     justify-items: stretch;
@@ -49,16 +58,37 @@ main {
     color: #ffffff;
 }
 
+.top-row {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+
 .prod-status-container {
     display: flex;
     flex-direction: column;
     align-items: stretch;
-    width: 80%;
+    width: 45%;
     background: #ffffff;
+    color: #191f45;
     border-radius: 10px;
 }
 
-#prod-status-click {
+@media screen and (max-width: 800px){
+    .prod-status-container {
+        width: 75%;
+        margin-top: 8px;
+        margin-bottom: 8px;
+    }
+    .top-row {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+.collapsible-click {
     padding-left: 5px;
     padding-right: 5px;
     display: flex;
@@ -74,17 +104,17 @@ main {
     user-select: none;
 }
 
-#prod-status-click > img {
+.collapsible-click > img {
     height: 1em;
     width: auto;
     transition: transform .2s ease-out;
 }
 
-#prod-status-click:hover {
+.collapsible-click:hover {
     background: #f2f2f2;
 }
 
-#prod-status-content {
+.collapsible-content {
     display: flex;
     flex-direction: column;
     border-radius: 10px;

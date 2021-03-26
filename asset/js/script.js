@@ -23,8 +23,6 @@ function get_healthcheck_url(region){
 function fetch_healthcheck(region){
     var url = get_healthcheck_url(region);
     $.getJSON('https://api.allorigins.win/get?url=' + encodeURIComponent(url), function (data) {
-        console.log(data.status.http_code);
-        console.log(data.contents);
         fill_html(region,data.status.http_code,data.contents);
     });
 }
@@ -35,6 +33,8 @@ regions.forEach(region => {
     fetch_healthcheck(region);
 });
 
+
+/*
 var prod_status_click = document.getElementById('prod-status-click');
 prod_status_click.addEventListener('click', function(){
     var prod_status_content = document.getElementById('prod-status-content');
@@ -46,4 +46,38 @@ prod_status_click.addEventListener('click', function(){
         prod_status_content.style.maxHeight = prod_status_content.scrollHeight+"px";
         arrow_img.style.transform="";
     }
-});
+});*/
+
+function makeCollapsible(div){
+    var collapsible_click = null;
+    var collapsible_content = null;
+    console.log(div);
+    div.childNodes.forEach(child => {
+        if(child.className === "collapsible-click"){
+            collapsible_click = child;
+        }else if(child.className === "collapsible-content"){
+            collapsible_content = child;
+        }
+    })
+    console.log(collapsible_click);
+    console.log(collapsible_content);
+    if(collapsible_click !== null && collapsible_content != null){
+        var arrow_img = collapsible_click.getElementsByTagName('img')[0];
+        collapsible_click.addEventListener('click', function(){
+            if(collapsible_content.style.maxHeight){
+                collapsible_content.style.maxHeight = null;
+                arrow_img.style.transform="rotate(90deg)";
+            }else{
+                collapsible_content.style.maxHeight = collapsible_content.scrollHeight+"px";
+                arrow_img.style.transform="";
+            }
+        });
+        collapsible_content.style.maxHeight = collapsible_content.scrollHeight+"px";
+    }
+}
+
+var collapsible_elements = document.getElementsByClassName("collapsible-container");
+
+for(let i=0;i<collapsible_elements.length;i++){
+    makeCollapsible(collapsible_elements[i]);
+}
