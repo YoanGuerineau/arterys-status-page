@@ -10,7 +10,6 @@ function fillProdStatus(region,http_code,content){
     }else{
         p.innerText = region + " status: NOT OK";
         img.src = "./asset/img/cross.png";
-
     }
     div.append(p,img);
     prod_status_content.appendChild(div);
@@ -123,3 +122,6 @@ $.getJSON('https://api.github.com/repos/yoanguerineau/arterys-status-page/issues
     });
 });
 
+$.getJSON('https://api.github.com/repos/yoanguerineau/arterys-status-page/contents/maintenance', function (data) {
+    console.log(data);
+});
