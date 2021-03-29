@@ -11,14 +11,7 @@
 
 <body>
     <header>
-        <div class="navbar">
-            <p>Arterys status page</p>
-            <div class="navbar-links">
-                <a class="navbar-item" href="#">Status</a>
-                <a class="navbar-item" href="#">Events</a>
-                <a class="navbar-item" href="#">Issues</a>
-            </div>
-        </div>
+        <!--This is filled with ./navbar.html with jquery-->
     </header>
 
     <main>
@@ -32,32 +25,43 @@
                         <!--This is filled with production clusters status with JS-->
                     </div>
             </div>
-            <div class="collapsible-container" id="some-container">
-                    <div class="collapsible-click" id="prod-status-click">
-                        <p>Something else</p>
+            <div class="collapsible-container" id="maintenances-container">
+                    <div class="collapsible-click" id="maintenances-click">
+                        <p>Incoming maintenances</p>
                         <img src="./asset/img/arrow.png">
                     </div>
-                    <div class="collapsible-content" id="prod-status-content">
-                        <p>Some content</p>
+                    <div class="collapsible-content" id="maintenances-content">
                     </div>
             </div>
         </div>
 
         <div class="issues-row">
-            <p>Somme issues here</p>
+            <div class="collapsible-container">
+                <div class="collapsible-click">
+                    <p>Latest Issues</p>
+                    <img src="./asset/img/arrow.png">
+                </div>
+                <div class="collapsible-content" id="latest-issues-content">
+                </div>
+            </div>
         </div>
     </main>
 
     <footer>
-        <div class="footer">
-            Here will stand the footer
-        </div>
+        <!--This is filled with ./footer.html with jquery-->
     </footer>
 </body>
+
 <script
     src="https://code.jquery.com/jquery-3.6.0.min.js"
     integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
     crossorigin="anonymous">
+</script>
+<script>
+    $(function(){
+        $("header").load('./navbar.html');
+        $("footer").load('./footer.html');
+    });
 </script>
 <script 
     src="./asset/js/script.js" 
