@@ -80,7 +80,7 @@ function fillIssues(data,elem){
         container.className = "issue";
         container.href = issue.html_url;
         var title_div = document.createElement('div');
-        title_div.className = "issue-title";
+        title_div.className = "title issue-title";
         var title = document.createElement('span');
         title.innerText = issue.title.trim();
         var body = document.createElement('span');

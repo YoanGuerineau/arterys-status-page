@@ -76,6 +76,10 @@ main {
     color: #9399b8;
 }
 
+.title {
+    color: #e1e3ed;
+}
+
 .details {
     font-size: 12px;
     font-family: Roboto, sans-serif;
@@ -162,14 +166,6 @@ main {
     width: auto;
 }
 
-/*** styles for the maintenances ***/
-.maintenance-title {
-    margin-bottom: 4px;
-}
-
-.maintenance-details {
-    color: gray
-}
 
 /** styles for the issues row and page**/
 .issues-row {
