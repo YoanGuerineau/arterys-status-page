@@ -37,7 +37,6 @@ function makeCollapsible(div){
     var collapsible_click = null;
     var collapsible_content = null;
     div.childNodes.forEach(child => {
-        console.log(child.className);
         if(String(child.className).includes("collapsible-click")){
             collapsible_click = child;
         }else if(String(child.className).includes("collapsible-content")){
@@ -129,10 +128,10 @@ function insertSeparator(element){
     element.append(separator);
 }
 
-$.getJSON('https://api.github.com/repos/yoanguerineau/arterys-status-page/issues?per_page=5&state=all&labels=displayed+issue', function (data) {
+$.getJSON('https://api.github.com/repos/yoanguerineau/arterys-status-page/issues?per_page=5&state=all&labels=displayed-issue', function (data) {
     fillIssues(data);
 });
 
-$.getJSON('https://api.github.com/repos/yoanguerineau/arterys-status-page/issues?per_page=5&state=all&labels=maintenance', function (data) {
+$.getJSON('https://api.github.com/repos/yoanguerineau/arterys-status-page/issues?per_page=5&state=open&labels=maintenance', function (data) {
     fillMaintenances(data);
 });;

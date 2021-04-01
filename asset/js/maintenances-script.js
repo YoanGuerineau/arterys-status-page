@@ -1,6 +1,6 @@
 function fillIssues(data,elem){
     if(elem == null){
-        var elem = document.getElementById('all-issues-content');
+        var elem = document.getElementById('latest-issues-content');
     }
     data.forEach(issue => {
         var container = document.createElement('a');
@@ -45,12 +45,17 @@ function fillIssues(data,elem){
     });
 }
 
+function fillMaintenances(data){
+    var maintenances_content = document.getElementById('all-maintenances-content');
+    fillIssues(data,maintenances_content);
+}
+
 function insertSeparator(element){
     var separator = document.createElement('hr');
     separator.className = "separator";
     element.append(separator);
 }
 
-$.getJSON('https://api.github.com/repos/yoanguerineau/arterys-status-page/issues?state=all&labels=displayed-issue', function (data) {
-    fillIssues(data);
-});
+$.getJSON('https://api.github.com/repos/yoanguerineau/arterys-status-page/issues?per_page=5&state=all&labels=maintenance', function (data) {
+    fillMaintenances(data);
+});;

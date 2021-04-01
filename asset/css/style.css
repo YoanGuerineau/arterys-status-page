@@ -6,19 +6,30 @@
 
 html,body {
     height: 100%;
+    width: 100%;
     min-width: 300px;
     display: flex;
     flex-direction: column;
 }
 
 /* header/navbar styles */
+header{
+    padding-bottom: 45px;
+    background: #0d0f1a;
+}
+
 .navbar {
-    padding: 0 15px;
+    width: 100%;
+    height: auto;
+    min-height: 45px;
+    position: fixed;
     display: flex;
     background: #9399b8;
     color: #0d0f1a;
     justify-content: space-between;
     align-items: center;
+    text-align: center;
+    opacity: 0.95;
 }
 
 .navbar-links {
@@ -26,8 +37,12 @@ html,body {
     list-style: none;
 }
 
-.navbar a {
-    padding: 15px 15px;
+.navbar a, .navbar-links a {
+    height: 100%;
+    display: flex;
+    min-height: 45px;
+    align-items: center;
+    padding: 0 15px;
     cursor: pointer;
     text-decoration: none;
     color: inherit;
@@ -38,6 +53,7 @@ html,body {
 }
 
 /* main content styles */
+
 main {
     padding: 15px 0;
     display: flex;
@@ -58,11 +74,13 @@ main {
     line-height: 20px;
     font-size: 12px;
     letter-spacing: 2.4px;
-    text-size-adjust: 100%;
+}
+
+.title {
+    color: #e1e3ed;
 }
 
 .content {
-    min-width: 300px;
     display: flex;
     flex-direction: column;
     font-size: 14px;
@@ -74,10 +92,6 @@ main {
     overflow: hidden;
     background: #06070d;
     color: #9399b8;
-}
-
-.title {
-    color: #e1e3ed;
 }
 
 .details {
@@ -146,6 +160,10 @@ main {
 }
 
 /*** styles for the status ***/
+#all-status-content, #all-maintenances-content, #all-issues-content {
+    width: 90%;
+}
+
 #prod-status-content {
     display: flex;
     flex-direction: column;
@@ -222,14 +240,7 @@ main {
     width: 18px;
 }
 
-/* footer content styles*/
-.footer {
-    display: flex;
-    background: #eaeaea;
-}
-
-/* some styles to make the page responsible */
-
+/* some styles to make the page responsive */
 @media screen and (max-width: 800px){
     .collapsible-container {
         width: 90%;
