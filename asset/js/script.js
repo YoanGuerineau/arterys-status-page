@@ -129,9 +129,11 @@ function insertSeparator(element){
 }
 
 $.getJSON('https://api.github.com/repos/yoanguerineau/arterys-status-page/issues?per_page=5&state=all&labels=displayed-issue', function (data) {
+    console.log(data);
     fillIssues(data);
 });
 
 $.getJSON('https://api.github.com/repos/yoanguerineau/arterys-status-page/issues?per_page=5&state=open&labels=maintenance', function (data) {
+    console.log(data);
     fillMaintenances(data);
 });;
