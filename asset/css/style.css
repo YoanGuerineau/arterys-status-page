@@ -178,12 +178,6 @@ main {
     padding: 7.5px 15px;
 }
 
-.region-status-content > img{
-    height: 1em;
-    width: auto;
-}
-
-
 /** styles for the issues row and page**/
 .issues-row {
     display: flex;
@@ -234,9 +228,17 @@ main {
     margin-bottom: 4px;
 }
 
-#mf-check-circle, #mf-cross-s, .issue-closed, .issue-opened {
-    fill: #e1e3ed;
+.icon {
     width: 18px;
+    height: 18px;
+}
+
+#mf-check-circle, .issue-opened {
+    fill: #22bb22;
+}
+
+#mf-cross-s, .issue-closed{
+    fill: #bb2222;
 }
 
 /* some styles to make the page responsive */
