@@ -9,7 +9,7 @@ function makeCollapsible(div){
         }
     })
     if(collapsible_click !== null && collapsible_content != null){
-        let arrow_img = collapsible_click.getElementsByTagName('img')[0];
+        let arrow_img = collapsible_click.getElementsByTagName('svg')[0];
         collapsible_click.addEventListener('click', function(){
             if(collapsible_content.style.maxHeight){
                 collapsible_content.style.maxHeight = null;
