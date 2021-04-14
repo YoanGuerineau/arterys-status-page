@@ -1,3 +1,6 @@
+/* Importing Roboto */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,500;0,700;1,500;1,700&display=swap');
+
 /* Setting up some useful content */
 * {
     padding: 0;
@@ -20,7 +23,7 @@ html,body {
     text-align: center;
     color: #e1e3ed;
     text-transform: uppercase;
-    font-weight: 400;
+    font-weight: bold;
     line-height: 20px;
     font-size: 12px;
     letter-spacing: 2.4px;
@@ -43,12 +46,13 @@ html,body {
     font-weight: 400;
     line-height: 20px;
     color: #9399b8;
+    opacity: 0.5;
 }
 
 /* header/navbar styles */
-header{
-    padding-bottom: 45px;
+header {
     background: #06070d;
+    padding-bottom: 45px;
 }
 
 .navbar {
@@ -58,17 +62,17 @@ header{
     position: fixed;
     display: flex;
     justify-content: space-between;
-    align-items: center;
     text-align: center;
-    opacity: 0.95;
+    opacity: 0.90;
 }
 
 .navbar-links {
     display: flex;
     list-style: none;
+    text-transform: uppercase;
 }
 
-.navbar a, .navbar-links a {
+.navbar a {
     height: 100%;
     display: flex;
     min-height: 45px;
@@ -84,15 +88,13 @@ header{
 }
 
 /* main content styles */
-
 main {
-    padding: 8px;
+    padding: 15px;
     display: flex;
     flex-direction: column;
     flex: 1;
     align-items: center;
     background: #06070d;
-    color: #e1e3ed;
 }
 
 /** some generic styles for collapsible elements **/
@@ -105,26 +107,23 @@ main {
 }
 
 .collapsible-click {
-    padding: 8px 15px;
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    padding: 8px 15px;
     align-items: center;
-    height: 1.75em;
     background: #0d0f1a;
-    color: #0d0f1a;
+    transition: background 300ms linear;
     cursor: pointer;
     user-select: none;
+}
+
+.collapsible-click:hover {
+    background: #262D4D;
+    transition: background 300ms linear;
 }
 
 .collapsible-click > svg {
     fill: #9399b8;
     transition: transform .2s ease-out;
-}
-
-.collapsible-click:hover {
-    background: #262D4D;
-    color: #e1e3ed;
 }
 
 .collapsible-content {
@@ -136,33 +135,25 @@ main {
 
 /** generic separator styles **/
 .separator {
-    display: flex;
-    justify-content: center;
     width: 98%;
     border-width: 1px 0 0 0;
     border-color: #262D4D;
     border-style: solid;
 }
 
-/** styles for the top-row part : production status and ?? **/
+/** generic styles for main page rows **/
+#prod-status-container, #maintenances-container, #issues-container {
+    margin: 8px;
+    width: 100%;
+    height: fit-content;
+}
+
+/** styles for the top-row part : production status and maintenances **/
 .top-row {
     display: flex;
     flex-direction: row;
     width: 100%;
-    justify-content: center;
-    align-items: flex-start;
-}
-
-/*** styles for individual pages ***/
-#all-status-content, #all-maintenances-content, #all-issues-content {
-    display: flex;
-    flex-direction: column;
-    width: 90%;
-    margin: 8px;
-}
-
-#prod-status-container, #maintenances-container {
-    margin: 8px;
+    justify-content: space-between;
 }
 
 .region-status-content {
@@ -174,24 +165,11 @@ main {
     padding: 7.5px 15px;
 }
 
-/** styles for the issues row and page**/
+/** styles for the issues (and maintenances) **/
 .issues-row {
     display: flex;
     flex-direction: column;
     width: 100%;
-    align-items: center;
-    margin: 8px;
-}
-
-.issues-row .collapsible-container {
-    width: 90%;
-}
-
-#latest-issues-content {
-    box-sizing: border-box;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
     align-items: center;
 }
 
@@ -203,18 +181,7 @@ main {
     justify-content: space-between;
     text-decoration: none;
     color: inherit;
-    padding: 15px;
-}
-
-.issue:hover {
-    color: #e1e3ed;
-}
-
-.issue-description {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
+    padding: 8px 15px;
 }
 
 .issue-title {
@@ -224,6 +191,20 @@ main {
     margin-bottom: 4px;
 }
 
+.issue:hover {
+    color: #e1e3ed;
+}
+
+/** styles for individual pages **/
+#all-status-content, #all-maintenances-content, #all-issues-content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 8px;
+    border-radius: 5px;
+}
+
+/** icons styles **/
 .icon {
     width: 18px;
     height: 18px;
@@ -239,16 +220,8 @@ main {
 
 /* some styles to make the page responsive */
 @media screen and (max-width: 800px){
-    .collapsible-container {
-        width: 90%;
-        margin-bottom: 8px;
-    }
-    .issues-row .collapsible-container{
-        width: 90%;
-    }
     .top-row {
         flex-direction: column;
         align-items: center;
-        padding-bottom: 0;
     }
 }

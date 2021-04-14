@@ -5,7 +5,7 @@ function fillIssues(data, elem){
         container.href = issue.html_url;
         let title_div = document.createElement('div');
         title_div.className = "title issue-title";
-        let title = document.createElement('span');
+        let title = document.createElement('h3');
         title.innerText = issue.title.trim();
         let body = document.createElement('span');
         body.className = "issue-body";
