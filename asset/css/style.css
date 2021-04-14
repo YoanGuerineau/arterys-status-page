@@ -101,7 +101,6 @@ main {
 .collapsible-container {
     display: flex;
     flex-direction: column;
-    width: 45%;
     overflow: hidden;
     border-radius: 5px;
 }
@@ -143,9 +142,17 @@ main {
 
 /** generic styles for main page rows **/
 #prod-status-container, #maintenances-container, #issues-container {
-    margin: 8px;
+    margin: 8px 0;
     width: 100%;
     height: fit-content;
+}
+
+#prod-status-container {
+    margin-right: 8px;
+}
+
+#maintenances-container {
+    margin-left: 8px;
 }
 
 /** styles for the top-row part : production status and maintenances **/
@@ -224,4 +231,9 @@ main {
         flex-direction: column;
         align-items: center;
     }
+
+    #prod-status-container, #maintenances-container {
+        margin: 8px 0;
+    }
+
 }
