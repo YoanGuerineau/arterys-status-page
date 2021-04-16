@@ -115,7 +115,7 @@ header {
 
 /* main content styles */
 main {
-    padding: 15px;
+    padding: 8px 15px;
     display: flex;
     flex-direction: column;
     flex: 1;
@@ -176,6 +176,13 @@ main {
     background: #0d0f1a;
 }
 
+/* styles for the top-row part : production status and maintenances */
+.top-row {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+}
 
 #prod-status-container {
     margin-right: 8px;
@@ -183,14 +190,6 @@ main {
 
 #maintenances-container {
     margin-left: 8px;
-}
-
-/* styles for the top-row part : production status and maintenances */
-.top-row {
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    justify-content: space-between;
 }
 
 .region-status-content {
