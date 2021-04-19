@@ -1,8 +1,11 @@
-function fillIssues(data, elem){
+function fillIssues(data, elem, individual=false){
     data.forEach(issue => {
         let container = document.createElement('a');
         container.className = "issue";
-        container.href = issue.html_url;
+        container.href = './issue.html?issue_id=' + issue.number;
+        if(individual || issue.comments == 0){
+            container.href = issue.html_url;
+        }
         let title_div = document.createElement('div');
         title_div.className = "title issue-title";
         let title = document.createElement('h3');
@@ -13,7 +16,7 @@ function fillIssues(data, elem){
         let time = new Date(issue.created_at).toISOString().slice(0,19).split('T');
         let details = document.createElement('span');
         details.className = "details";
-        details.innerText = "#" + issue.number + " opened the " + time[0] + " at " + time[1] + "(UTC) by " + issue.user.login
+        details.innerText = "#" + issue.number + " opened the " + time[0] + " at " + time[1] + "(UTC) by " + issue.user.login + " (comments:" + issue.comments + ")"
         let img = document.createElement('span');
         img.className = "icon";
         if (issue.state === "open"){
@@ -39,6 +42,25 @@ function fillIssues(data, elem){
         if(issue != data[data.length-1]){
             insertSeparator(elem);
         }
+    });
+}
+
+function fillComments(comments, elem) {
+    console.log(comments);
+    comments.forEach(comment => {
+        insertSeparator(elem);
+        let container = document.createElement('div');
+        container.className = "comment";
+        let body = document.createElement('span');
+        body.className = "comment-body";
+        body.innerText = comment.body;
+        let time = new Date(comment.created_at).toISOString().slice(0,19).split('T');
+        let details = document.createElement('span');
+        details.className = "details";
+        details.innerText = "#" + comment.id + " written the " + time[0] + " at " + time[1] + "(UTC) by " + comment.user.login
+        container.append(body);
+        container.append(details);
+        elem.appendChild(container);
     });
 }
 
