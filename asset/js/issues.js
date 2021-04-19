@@ -1,8 +1,8 @@
-function fillIssues(data, elem, individual=false){
+function fillIssues(data, elem, individual = false){
     data.forEach(issue => {
         let container = document.createElement('a');
         container.className = "issue";
-        container.href = './issue.html?issue_id=' + issue.number;
+        container.href = './issue.html?issue_id='+issue.number;
         if(individual || issue.comments == 0){
             container.href = issue.html_url;
         }
@@ -46,7 +46,6 @@ function fillIssues(data, elem, individual=false){
 }
 
 function fillComments(comments, elem) {
-    console.log(comments);
     comments.forEach(comment => {
         insertSeparator(elem);
         let container = document.createElement('div');
