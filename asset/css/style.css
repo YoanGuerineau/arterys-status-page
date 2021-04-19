@@ -209,7 +209,7 @@ main {
     align-items: center;
 }
 
-.issue {
+.issue, .comment {
     box-sizing: border-box;
     width: 100%;
     display: flex;
@@ -232,13 +232,30 @@ main {
 }
 
 /* styles for individual pages */
-#all-status-container, #all-maintenances-container, #all-issues-container {
+#all-status-container, #all-maintenances-container, #all-issues-container, #individual-issue-container {
     display: flex;
     flex-direction: column;
     width: 100%;
     margin: 8px 0;
     border-radius: 5px;
     background: #0d0f1a;
+}
+
+#individual-issue-container {
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+
+#individual-issue-header {
+    width: 100%;
+}
+
+#individual-issue-comments {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 #all-status-title, #all-maintenances-title, #all-issues-title {
