@@ -37,6 +37,7 @@ jobs:
           
       - name: Commit json files
         run: |
+          git pull
           git add ./asset/json/*.json
           git add ./asset/json/comments/*.json
           git config --local user.email "action@github.com"
