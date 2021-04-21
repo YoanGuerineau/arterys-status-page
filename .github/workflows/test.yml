@@ -35,6 +35,8 @@ jobs:
         run: |
           git add ./asset/json/displayed-issues.json
           git add ./asset/json/maintenances.json
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
           git commit -m "Auto updating json files"
           
       - name: Push json files
