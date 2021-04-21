@@ -38,7 +38,7 @@ jobs:
           git commit -m "Auto updating json files"
           
       - name: Push json files
-        uses: ad-m/ithub-push-action@main
+        uses: ad-m/github-push-action@main
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           branch: ${{ steps.extract_branch.outputs.branch }}
