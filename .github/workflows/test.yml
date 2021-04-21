@@ -34,7 +34,7 @@ jobs:
       - name: Commit json files
         run: |
           git add ./asset/json/displayed-issues.json
-          git add ./asset/json/maintenance.json
+          git add ./asset/json/maintenances.json
           git commit -m "Auto updating json files"
           
       - name: Push json files
