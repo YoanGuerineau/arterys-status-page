@@ -33,7 +33,7 @@ jobs:
           wget https://api.github.com/repos/$GITHUB_REPOSITORY/issues -O ./asset/json/issues.json
           wget https://api.github.com/repos/$GITHUB_REPOSITORY/issues?labels=displayed-issue -O ./asset/json/displayed-issues.json
           wget https://api.github.com/repos/$GITHUB_REPOSITORY/issues?labels=maintenance -O ./asset/json/maintenances.json
-          bash ./.github/workflow/fetch_comments.sh
+          bash ./.github/workflows/fetch_comments.sh
           
       - name: Commit json files
         run: |
