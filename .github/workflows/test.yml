@@ -29,7 +29,9 @@ jobs:
           fetch-depth: 0
 
       - name: Testing issues to json
-        run: echo $GITHUB_REPOSITORY
+        run: |
+          wget https://api.github.com/repos/$GITHUB_REPOSITORY/issues?labels=displayed-issues -O displayed-issues.json
+          cat displayed-issues.json
       # Runs a single command using the runners shell
       - name: Run a one-line script
         run: echo Hello, world!
