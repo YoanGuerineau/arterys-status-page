@@ -30,8 +30,10 @@ jobs:
 
       - name: Testing issues to json
         run: |
-          wget https://api.github.com/repos/$GITHUB_REPOSITORY/issues?labels=displayed-issues -O displayed-issues.json
+          wget https://api.github.com/repos/$GITHUB_REPOSITORY/issues?labels=displayed-issue -O displayed-issues.json
+          wget https://api.github.com/repos/$GITHUB_REPOSITORY/issues?labels=maintenance -O maintenances.json
           cat displayed-issues.json
+          jq displayed-issues.json
       # Runs a single command using the runners shell
       - name: Run a one-line script
         run: echo Hello, world!
