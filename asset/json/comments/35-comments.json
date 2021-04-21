@@ -1,0 +1,68 @@
+{
+  "url": "https://api.github.com/repos/YoanGuerineau/arterys-status-page/issues/35",
+  "repository_url": "https://api.github.com/repos/YoanGuerineau/arterys-status-page",
+  "labels_url": "https://api.github.com/repos/YoanGuerineau/arterys-status-page/issues/35/labels{/name}",
+  "comments_url": "https://api.github.com/repos/YoanGuerineau/arterys-status-page/issues/35/comments",
+  "events_url": "https://api.github.com/repos/YoanGuerineau/arterys-status-page/issues/35/events",
+  "html_url": "https://github.com/YoanGuerineau/arterys-status-page/issues/35",
+  "id": 849121506,
+  "node_id": "MDU6SXNzdWU4NDkxMjE1MDY=",
+  "number": 35,
+  "title": "This is an issue/maintenance",
+  "user": {
+    "login": "YoanGuerineau",
+    "id": 39827510,
+    "node_id": "MDQ6VXNlcjM5ODI3NTEw",
+    "avatar_url": "https://avatars.githubusercontent.com/u/39827510?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/YoanGuerineau",
+    "html_url": "https://github.com/YoanGuerineau",
+    "followers_url": "https://api.github.com/users/YoanGuerineau/followers",
+    "following_url": "https://api.github.com/users/YoanGuerineau/following{/other_user}",
+    "gists_url": "https://api.github.com/users/YoanGuerineau/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/YoanGuerineau/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/YoanGuerineau/subscriptions",
+    "organizations_url": "https://api.github.com/users/YoanGuerineau/orgs",
+    "repos_url": "https://api.github.com/users/YoanGuerineau/repos",
+    "events_url": "https://api.github.com/users/YoanGuerineau/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/YoanGuerineau/received_events",
+    "type": "User",
+    "site_admin": false
+  },
+  "labels": [
+    {
+      "id": 2869313384,
+      "node_id": "MDU6TGFiZWwyODY5MzEzMzg0",
+      "url": "https://api.github.com/repos/YoanGuerineau/arterys-status-page/labels/displayed-issue",
+      "name": "displayed-issue",
+      "color": "0E8A16",
+      "default": false,
+      "description": "This issue will be displayed by arterys-status-page"
+    },
+    {
+      "id": 2869315214,
+      "node_id": "MDU6TGFiZWwyODY5MzE1MjE0",
+      "url": "https://api.github.com/repos/YoanGuerineau/arterys-status-page/labels/maintenance",
+      "name": "maintenance",
+      "color": "FBCA04",
+      "default": false,
+      "description": "This issue describes a maintenance"
+    }
+  ],
+  "state": "open",
+  "locked": false,
+  "assignee": null,
+  "assignees": [
+
+  ],
+  "milestone": null,
+  "comments": 3,
+  "created_at": "2021-04-02T09:57:05Z",
+  "updated_at": "2021-04-02T17:31:54Z",
+  "closed_at": null,
+  "author_association": "OWNER",
+  "active_lock_reason": null,
+  "body": "This is the body!",
+  "closed_by": null,
+  "performed_via_github_app": null
+}
