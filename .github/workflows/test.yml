@@ -19,9 +19,9 @@ jobs:
       - name: Fetch issues and comments to json files
         run: |
           mkdir -p ./asset/json ./asset/json/comments
-          wget "https://api.github.com/repos/$GITHUB_REPOSITORY/issues?state=all&labels=displayed-issue&labels=maintenance" -O ./asset/json/issues.json
           wget "https://api.github.com/repos/$GITHUB_REPOSITORY/issues?state=all&labels=displayed-issue" -O ./asset/json/displayed-issues.json
           wget "https://api.github.com/repos/$GITHUB_REPOSITORY/issues?state=all&labels=maintenance" -O ./asset/json/maintenances.json
+          jq -s '.[][]' displayed-issues.json maintenances.json | jq -s -S 'sort_by(.number) | reverse' > ./asset/json/issues.json
           bash ./.github/workflows/fetch_comments.sh
           
       - name: Commit json files
