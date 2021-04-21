@@ -27,16 +27,14 @@ jobs:
 
       - name: Fetch issues to json
         run: |
-          mkdir -p asset/json
-          wget https://api.github.com/repos/$GITHUB_REPOSITORY/issues?labels=displayed-issue -O asset/json/displayed-issues.json
-          wget https://api.github.com/repos/$GITHUB_REPOSITORY/issues?labels=maintenance -O asset/json/maintenances.json
-          ls -lRA ./
+          mkdir -p ./asset/json
+          wget https://api.github.com/repos/$GITHUB_REPOSITORY/issues?labels=displayed-issue -O ./asset/json/displayed-issues.json
+          wget https://api.github.com/repos/$GITHUB_REPOSITORY/issues?labels=maintenance -O ./asset/json/maintenances.json
           
       - name: Commit json files
         run: |
-          ls -lRA ./
-          git add asset/json/displayed-issues.json
-          git add asset/json/maintenance.json
+          git add ./asset/json/displayed-issues.json
+          git add ./asset/json/maintenance.json
           git commit -m "Auto updating json files"
           
       - name: Push json files
