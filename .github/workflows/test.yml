@@ -24,16 +24,25 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
-        with:
-          persist-credentials: false
-          fetch-depth: 0
 
-      - name: Testing issues to json
+      - name: Fetch issues to json
         run: |
-          wget https://api.github.com/repos/$GITHUB_REPOSITORY/issues?labels=displayed-issue -O displayed-issues.json
-          wget https://api.github.com/repos/$GITHUB_REPOSITORY/issues?labels=maintenance -O maintenances.json
-          cat displayed-issues.json
-          jq displayed-issues.json
+          mkdir -p asset/json
+          wget https://api.github.com/repos/$GITHUB_REPOSITORY/issues?labels=displayed-issue -O asset/json/displayed-issues.json
+          wget https://api.github.com/repos/$GITHUB_REPOSITORY/issues?labels=maintenance -O asset/json/maintenances.json
+          
+      - name: Commit json files
+        run: |
+          git add displayed-issues.json
+          git add maintenance.json
+          git commit -m "Auto updating json files"
+          
+      - name: Push json files
+        uses: ad-m/ithub-push-action@main
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: ${{ steps.extract_branch.outputs.branch }}
+          
       # Runs a single command using the runners shell
       - name: Run a one-line script
         run: echo Hello, world!
