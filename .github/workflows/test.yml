@@ -41,7 +41,7 @@ jobs:
           git add ./asset/json/comments/*.json
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git commit -m "Auto updating json files"
+          git diff-index --quiet HEAD || git commit -m "Auto updating json files"
           
       - name: Push json files
         uses: ad-m/github-push-action@master
