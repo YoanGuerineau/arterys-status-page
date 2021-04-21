@@ -38,13 +38,13 @@ regions.forEach(region => {
 });
 
 //Filling the maintenances
-$.getJSON('https://api.github.com/repos/yoanguerineau/arterys-status-page/issues?per_page=3&state=open&labels=maintenance', function (data) {
+$.getJSON('./asset/json/maintenances.json', function (data) {
     const maintenances_content = document.getElementById('maintenances-content');
-    fillIssues(data, maintenances_content);
+    fillIssues(data.slice(0,3), maintenances_content);
 });
 
 //Filling the issues
-$.getJSON('https://api.github.com/repos/yoanguerineau/arterys-status-page/issues?per_page=5&state=all&labels=displayed-issue', function (data) {
+$.getJSON('./asset/json/displayed-issues.json', function (data) {
     const latest_issues_content = document.getElementById('latest-issues-content');
-    fillIssues(data, latest_issues_content);
+    fillIssues(data.slice(0,5), latest_issues_content);
 });
