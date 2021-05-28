@@ -34,9 +34,9 @@ function parse_body(body) {
   lines.forEach( (line,index) => {
     line = line.trim()
     if (line.startsWith("starting_datetime:")) {
-      starting_datetime = line.split("starting_datetime:");
+      starting_datetime = line.split("starting_datetime:")[1];
     } else if (line.startsWith("estimated_duration:")) {
-      estimated_duration = line.split("estimated_duration:");
+      estimated_duration = line.split("estimated_duration:")[1];
     } else {
       description += line;
     }
