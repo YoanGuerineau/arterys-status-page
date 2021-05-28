@@ -33,7 +33,7 @@ jobs:
     - name: Fetching and cleaning-up comments
       run: |
         bash ./.github/workflows/fetch_comments.sh
-        ls -m ./asset/json/comments | xargs -r0 node ./.github/workflows/cleanup_comments_json.js
+        ls -m ./asset/json/comments | node ./.github/workflows/cleanup_comments_json.js
           
     - name: Commit json files
       run: |
