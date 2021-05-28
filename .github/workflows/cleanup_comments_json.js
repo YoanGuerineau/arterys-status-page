@@ -11,6 +11,7 @@ args.forEach( file => {
   comments = cleanup_comments(comments);
 
   const result_json = JSON.stringify(comments, null, 2);
+  console.log(result_json)
   fs.writeFileSync("./asset/json/comments/" + file, result_json);  
 });
 
