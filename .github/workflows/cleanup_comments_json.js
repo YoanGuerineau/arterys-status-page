@@ -1,8 +1,7 @@
 'use strict'
 
 const fs = require('fs');
-const args = filter(process.argv.slice(2)[0].split(/[\n, ]+/));
-console.log(args);
+const args = process.argv.slice(2)[0].split(/[\n, ]+/).filter(element => return element.length !== 0;
 
 
 args.forEach( file => {
