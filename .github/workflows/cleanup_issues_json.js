@@ -3,14 +3,15 @@
 const fs = require('fs');
 const args = process.argv.slice(2);
 
-let raw_data = fs.readFileSync(args[0]);
-let issues = JSON.parse(raw_data);
+const raw_data = fs.readFileSync(args[0]);
+const issues = JSON.parse(raw_data);
 
 issues.forEach( issue => {
-  const result_json = JSON.stringify(cleanup_issue(issue), null, 2)
-  console.log(result_json)
-  fs.writeFileSync(args[0], result_json);
+  issue = cleanup_issue(issue);
 })
+
+const result_json = JSON.stringify(issues);
+fs.writeFileSync(args[0], result_json);
 
 function cleanup_issue(issue) {
   const parsed_body = parse_body(issue.body);
@@ -34,7 +35,7 @@ function parse_body(body) {
   let starting_datetime = null;
   let estimated_duration = null;
   lines.forEach( (line,index) => {
-    line = line.trim()
+    line = line.trim();
     if (line.startsWith("starting_datetime:")) {
       starting_datetime = line.split("starting_datetime:")[1].trim();
     } else if (line.startsWith("estimated_duration:")) {
