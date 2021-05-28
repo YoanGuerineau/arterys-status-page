@@ -8,6 +8,7 @@ let issues = JSON.parse(raw_data);
 
 issues.forEach( issue => {
   const result_json = JSON.stringify(cleanup_issue(issue), null, 2)
+  console.log(result_json)
   fs.writeFileSync(args[0], result_json);
 })
 
