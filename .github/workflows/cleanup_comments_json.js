@@ -2,6 +2,8 @@
 
 const fs = require('fs');
 const args = process.argv.slice(2)[0].split(", ");
+console.log(args);
+
 
 args.forEach( file => {
   const raw_data = fs.readFileSync("./asset/json/comments/" + file);
