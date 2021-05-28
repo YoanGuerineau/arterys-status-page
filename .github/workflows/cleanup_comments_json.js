@@ -9,7 +9,7 @@ args.forEach( file => {
 
   cleanup_comment(comment);
 
-  const result_json = JSON.stringify(issues, null, 2);
+  const result_json = JSON.stringify(comment, null, 2);
   console.log(result_json)
   fs.writeFileSync("./asset/json/comments/" + file, result_json);  
 });
