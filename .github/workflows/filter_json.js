@@ -1,11 +1,13 @@
 'use strict'
 
 const fs = require('fs');
-let raw_data = fs.readFileSync('./asset/json/displayed-issues.json');
-let issues = JSON.parse(raw_data);
-issues.forEach( (issue,index) => {
-  console.log(JSON.stringify(clean_object(issue), null, 2));
-  //console.log(index)
+const args = process.argv.slice(2);
+
+let raw_data = fs.readFileSync(args[0]);
+let elements = JSON.parse(raw_data);
+
+elements.forEach( element => {
+  console.log(JSON.stringify(clean_object(element), null, 2));
 })
 
 function clean_object(object) {
