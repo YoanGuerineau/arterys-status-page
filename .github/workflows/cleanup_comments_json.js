@@ -7,10 +7,9 @@ args.forEach( file => {
   const raw_data = fs.readFileSync("./asset/json/comments/" + file);
   let comments = JSON.parse(raw_data);
 
-  comments = cleanup_comments(comment);
+  comments = cleanup_comments(comments);
 
   const result_json = JSON.stringify(comments, null, 2);
-  console.log(result_json)
   fs.writeFileSync("./asset/json/comments/" + file, result_json);  
 });
 
