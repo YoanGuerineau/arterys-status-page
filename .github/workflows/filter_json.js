@@ -13,5 +13,16 @@ function clean_object(object) {
   labels.forEach( (label,index) => { 
     labels[index] = Object(label.name)
   })
-  return Object(object.html_url,object.comments_url,object.number,object.title,object.user.login,labels,object.state,object.comments,object.created_at,object.body)
+  return Object(
+    html_url: object.html_url,
+    comments_url: object.comments_url,
+    number: object.number,
+    title: object.title,
+    login: object.user.login,
+    labels: labels,
+    state: object.state,
+    comments: object.comments,
+    created_at: object.created_at,
+    body: object.body
+  )
 }
