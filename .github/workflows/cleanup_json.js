@@ -4,22 +4,23 @@ const fs = require('fs');
 const args = process.argv.slice(2);
 
 let raw_data = fs.readFileSync(args[0]);
-let elements = JSON.parse(raw_data);
+let issues = JSON.parse(raw_data);
 
-elements.forEach( element => {
-  console.log(JSON.stringify(clean_object(element), null, 2));
+issues.forEach( issue => {
+  const result_json = JSON.stringify(cleanup_issue(issue), null, 2)
+  fs.writeFileSync(args[0], result_json);
 })
 
-function clean_object(object) {
-  const parsed_body = parse_body(object.body);
+function cleanup_issue(issue) {
+  const parsed_body = parse_body(issue.body);
   return Object({
-    html_url: object.html_url,
-    number: object.number,
-    title: object.title,
-    user: Object({login: object.user.login}),
-    state: object.state,
-    comments: object.comments,
-    created_at: object.created_at,
+    html_url: issue.html_url,
+    number: issue.number,
+    title: issue.title,
+    user: Object({login: issue.user.login}),
+    state: issue.state,
+    comments: issue.comments,
+    created_at: issue.created_at,
     body: parsed_body.description,
     starting_datetime: parsed_body.starting_datetime,
     estimated_duration: parsed_body.estimated_duration,
