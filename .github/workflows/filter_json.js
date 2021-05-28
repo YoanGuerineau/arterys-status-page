@@ -13,7 +13,7 @@ function clean_object(object) {
   labels.forEach( (label,index) => { 
     labels[index] = Object(label.name)
   })
-  return Object(
+  return Object({
     html_url: object.html_url,
     comments_url: object.comments_url,
     number: object.number,
@@ -24,5 +24,5 @@ function clean_object(object) {
     comments: object.comments,
     created_at: object.created_at,
     body: object.body,
-  )
+  })
 }
