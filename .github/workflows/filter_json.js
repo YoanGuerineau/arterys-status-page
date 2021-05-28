@@ -4,7 +4,7 @@ const fs = require('fs')
 let raw_data = fs.readFileSync('./asset/json/displayed-issues.json')
 let issues = JSON.parse(raw_data)
 issues.forEach( (issue,index) => {
-  console.log(JSON.stringify(clean_object(issue)))
+  console.log(JSON.stringify(clean_object(issue), null, 2))
   //console.log(index)
 })
 
