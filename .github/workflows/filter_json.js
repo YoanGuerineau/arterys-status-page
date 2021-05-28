@@ -8,7 +8,7 @@ issues.forEach( (issue,index) => {
   //console.log(index)
 })
 
-function clean_object(object): Object {
+function clean_object(object) {
   let labels = object.labels
   labels.forEach( (label,index) => { 
     labels[index] = Object(label.name)
