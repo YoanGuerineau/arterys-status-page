@@ -10,7 +10,7 @@ issues.forEach( (issue,index) => {
   issues[index] = cleanup_issue(issue);
 })
 
-const result_json = JSON.stringify(issues);
+const result_json = JSON.stringify(issues, null, 2);
 fs.writeFileSync(args[0], result_json);
 
 function cleanup_issue(issue) {
