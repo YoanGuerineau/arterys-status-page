@@ -20,6 +20,8 @@ jobs:
       uses: actions/setup-node@v2
       with:
         node-version: 10.x
+        
+    - name: Fetching and cleaning-up issues
     - run: |
         mkdir -p ./asset/json/comments
         wget "https://api.github.com/repos/$GITHUB_REPOSITORY/issues?state=all&labels=displayed-issue" -O ./asset/json/displayed-issues.json
