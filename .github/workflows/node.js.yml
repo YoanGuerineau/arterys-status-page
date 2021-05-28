@@ -30,9 +30,9 @@ jobs:
           wget "https://api.github.com/repos/$GITHUB_REPOSITORY/issues?state=all&labels=displayed-issue" -O ./asset/json/displayed-issues.json
           wget "https://api.github.com/repos/$GITHUB_REPOSITORY/issues?state=all&labels=maintenance" -O ./asset/json/maintenances.json
           node ./.github/workflows/cleanup_issues_json.js ./asset/json/displayed-issues.json
-          jq ./asset/json/displayed-issues.json
+          jq -s '.' ./asset/json/displayed-issues.json
           node ./.github/workflows/cleanup_issues_json.js ./asset/json/maintenances.json
-          jq ./asset/json/maintenances.json
+          jq -s '.' ./asset/json/maintenances.json
           jq -s '.[][]' ./asset/json/displayed-issues.json ./asset/json/maintenances.json | jq -s -S 'sort_by(.number) | reverse' > ./asset/json/issues.json
           bash ./.github/workflows/fetch_comments.sh
   
