@@ -17,7 +17,7 @@ function clean_object(object) {
     html_url: object.html_url,
     number: object.number,
     title: object.title,
-    login: object.user.login,
+    user: Object({login: object.user.login}),
     labels: labels,
     state: object.state,
     comments: object.comments,
