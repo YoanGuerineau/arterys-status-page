@@ -23,6 +23,6 @@ function clean_object(object) {
     state: object.state,
     comments: object.comments,
     created_at: object.created_at,
-    body: object.body
+    body: object.body,
   )
 }
