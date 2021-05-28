@@ -26,6 +26,6 @@ function cleanup_comments(comments) {
     });
     console.log(comment)
   });
-  consoloe.log(comments)
+  console.log(comments)
   return comments;  
 }
