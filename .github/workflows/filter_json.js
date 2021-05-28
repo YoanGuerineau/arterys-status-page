@@ -40,10 +40,10 @@ function parse_body(body) {
     if (description !== "" && lines.length > index + 1 && !lines[index + 1].startsWith("starting_datetime:") && !lines[index + 1].startsWith("estimated_duration:")) {
       description += "\n";
     }
-  }
+  });
   return Object({
-                description: description,
-                starting_datetime: starting_datetime,
-                estimated_duration: estimated_duration,
-                });
+    description: description,
+    starting_datetime: starting_datetime,
+    estimated_duration: estimated_duration,
+  });
 }
