@@ -17,15 +17,15 @@ args.forEach( file => {
 
 
 function cleanup_comments(comments) {
-  comments.forEach( comment => {
+  let cleaned_comments = [];
+  comments.forEach( (comment,index) => {
     comment = Object({
       id: comment.id,
       body: comment.body,
       user: Object({login: comment.user.login}),
       created_at: comment.created_at,
     });
-    console.log(comment)
+    comments[index] = comment;
   });
-  console.log(comments)
   return comments;  
 }
