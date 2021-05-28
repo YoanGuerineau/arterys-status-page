@@ -16,7 +16,7 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: Use Node.js 10.x
+    - name: Use Node.js 10.x Fetching and cleaning-up issues
       uses: actions/setup-node@v2
       with:
         node-version: 10.x
@@ -27,7 +27,11 @@ jobs:
         node ./.github/workflows/cleanup_issues_json.js ./asset/json/displayed-issues.json
         node ./.github/workflows/cleanup_issues_json.js ./asset/json/maintenances.json
         jq -s '.[][]' ./asset/json/displayed-issues.json ./asset/json/maintenances.json | jq -s -S 'sort_by(.number) | reverse' > ./asset/json/issues.json
+    
+    - name: Fetching and cleaning-up comments
+    - run: |
         bash ./.github/workflows/fetch_comments.sh
+        ls ./asset/json/comments | node ./.github/workflows/cleanup_comment_json.js
           
     - name: Commit json files
       run: |
