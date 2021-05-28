@@ -32,13 +32,12 @@ function parse_body(body) {
   let starting_datetime = null;
   let estimated_duration = null;
   lines.forEach( (line,index) => {
-    line = line.trim()
     if (line.startsWith("starting_datetime:")) {
-      starting_datetime = line.split("starting_datetime:")[1];
+      starting_datetime = line.split("starting_datetime:")[1].trim();
     } else if (line.startsWith("estimated_duration:")) {
-      estimated_duration = line.split("estimated_duration:")[1];
+      estimated_duration = line.split("estimated_duration:")[1].trim();
     } else {
-      description += line;
+      description += line.trim();
     }
     if (description !== "" && lines.length > index + 1 && !lines[index + 1].startsWith("starting_datetime:") && !lines[index + 1].startsWith("estimated_duration:")) {
       description += "\n";
