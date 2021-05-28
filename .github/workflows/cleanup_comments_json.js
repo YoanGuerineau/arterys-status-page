@@ -1,7 +1,7 @@
 'use strict'
 
 const fs = require('fs');
-const args = process.argv.slice(2);
+const args = process.argv.slice(2).split(", ");
 
 args.forEach( file => {
   const raw_data = fs.readFileSync("./asset/json/comments/" + file);
