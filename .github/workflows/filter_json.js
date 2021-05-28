@@ -15,7 +15,6 @@ function clean_object(object) {
   })
   return Object({
     html_url: object.html_url,
-    comments_url: object.comments_url,
     number: object.number,
     title: object.title,
     login: object.user.login,
