@@ -4,13 +4,14 @@ const fs = require('fs');
 const args = process.argv.slice(2);
 
 args.forEach( file => {
-  const raw_data = fs.readFileSync("./asset/json/comments/"+file);
+  const raw_data = fs.readFileSync("./asset/json/comments/" + file);
   const comment = JSON.parse(raw_data);
 
   cleanup_comment(comment);
 
   const result_json = JSON.stringify(issues, null, 2);
-  fs.writeFileSync("./asset/json/comments/"+file, result_json);  
+  console.log(result_json)
+  fs.writeFileSync("./asset/json/comments/" + file, result_json);  
 });
 
 
