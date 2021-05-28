@@ -5,21 +5,24 @@ const args = process.argv.slice(2);
 
 args.forEach( file => {
   const raw_data = fs.readFileSync("./asset/json/comments/" + file);
-  let comment = JSON.parse(raw_data);
+  let comments = JSON.parse(raw_data);
 
-  comment = cleanup_comment(comment);
+  comments = cleanup_comments(comment);
 
-  const result_json = JSON.stringify(comment, null, 2);
+  const result_json = JSON.stringify(comments, null, 2);
   console.log(result_json)
   fs.writeFileSync("./asset/json/comments/" + file, result_json);  
 });
 
 
-function cleanup_comment(comment) {
-  return Object({
-    id: comment.id,
-    body: comment.body,
-    user: Object({login: comment.user.login}),
-    created_at: comment.created_at,
+function cleanup_comments(comments) {
+  comments.forEach( comment => {
+    comment = Object({
+      id: comment.id,
+      body: comment.body,
+      user: Object({login: comment.user.login}),
+      created_at: comment.created_at,
+    });
   });
+  return comments;  
 }
