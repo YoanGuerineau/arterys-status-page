@@ -11,6 +11,7 @@ issues.forEach( issue => {
 })
 
 const result_json = JSON.stringify(issues);
+console.log(result_json);
 fs.writeFileSync(args[0], result_json);
 
 function cleanup_issue(issue) {
