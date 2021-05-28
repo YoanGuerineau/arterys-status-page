@@ -5,9 +5,9 @@ const args = process.argv.slice(2);
 
 args.forEach( file => {
   const raw_data = fs.readFileSync("./asset/json/comments/" + file);
-  const comment = JSON.parse(raw_data);
+  let comment = JSON.parse(raw_data);
 
-  cleanup_comment(comment);
+  comment = cleanup_comment(comment);
 
   const result_json = JSON.stringify(comment, null, 2);
   console.log(result_json)
