@@ -4,7 +4,7 @@ const fs = require('fs');
 const args = process.argv.slice(2);
 
 const raw_data = fs.readFileSync(args[0]);
-let issues = JSON.parse(raw_data);
+const issues = JSON.parse(raw_data);
 
 issues.forEach( (issue,index) => {
   issues[index] = cleanup_issue(issue);
